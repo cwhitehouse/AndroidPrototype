@@ -14,6 +14,7 @@ public abstract class BaseActivity extends Activity {
 	// Constants
 	//================================================================================
 
+	public static final int ANIMATION_STYLE_NONE = 0;
 	public static final int ANIMATION_STYLE_SLIDE_SIDEWAYS = 1;
 	public static final int ANIMATION_STYLE_SLIDE_UP = 2;
 	public static final int ANIMATION_STYLE_FADE_BACK = 3;
@@ -67,7 +68,7 @@ public abstract class BaseActivity extends Activity {
 	public abstract int getLayoutID();
 
 	public int getAnimationStyle() {
-		return 0;
+		return ANIMATION_STYLE_NONE;
 	}
 
 	//================================================================================

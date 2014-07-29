@@ -11,10 +11,22 @@ import java.util.List;
  */
 public class OperationDispatch {
 
+	//================================================================================
+	// Constants
+	//================================================================================
+
 	private static final int MAX_OPERATION_COUNT = 1;
+
+	//================================================================================
+	// Variables
+	//================================================================================
 
 	private LinkedList<MyOperation> mOperationQueue;
 	private LinkedList<MyOperation> mRunningOperations;
+
+	//================================================================================
+	// Singleton
+	//================================================================================
 
 	private static OperationDispatch sSelf;
 
@@ -25,15 +37,27 @@ public class OperationDispatch {
 		return sSelf;
 	}
 
+	//================================================================================
+	// Constructor
+	//================================================================================
+
 	private OperationDispatch() {
 		mOperationQueue = new LinkedList<MyOperation>();
 		mRunningOperations = new LinkedList<MyOperation>();
 	}
 
+	//================================================================================
+	// Dispatch
+	//================================================================================
+
 	public void runOperation(MyOperation operation) {
 		mOperationQueue.add(operation);
 		checkOperationQueue();
 	}
+
+	//================================================================================
+	// Callbacks
+	//================================================================================
 
 	public void onOperationFinished(MyOperation operation) {
 		if(mRunningOperations.remove(operation))
@@ -47,6 +71,10 @@ public class OperationDispatch {
 			nextOperation.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 		}
 	}
+
+	//================================================================================
+	// Check for Running
+	//================================================================================
 
 	public List<MyOperation> findOperations(Class operationClass) {
 		List<MyOperation> foundOperations = new ArrayList<MyOperation>();

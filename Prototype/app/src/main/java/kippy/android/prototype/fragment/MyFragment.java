@@ -19,9 +19,16 @@ import kippy.android.prototype.activity.MyActivity;
  */
 public abstract class MyFragment extends Fragment {
 
-	List<BroadcastReceiverInfo> mRegisteredReceivers = new ArrayList<BroadcastReceiverInfo>();
+	//================================================================================
+	// Variables
+	//================================================================================
 
-	View vBase;
+	protected List<BroadcastReceiverInfo> mRegisteredReceivers = new ArrayList<BroadcastReceiverInfo>();
+	protected View vBase;
+
+	//================================================================================
+	// Life Cycle Management
+	//================================================================================
 
 	@Override
 	public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,7 +54,19 @@ public abstract class MyFragment extends Fragment {
 			localBroadcastManager.unregisterReceiver(registeredReceiver.mBroadcastReceiver);
 	}
 
+	public boolean onBackPressed() {
+		return false;
+	}
+
+	//================================================================================
+	// To Implement
+	//================================================================================
+
 	public abstract int getLayoutID();
+
+	//================================================================================
+	// Convenience
+	//================================================================================
 
 	public MyActivity getMyActivity() {
 		return (MyActivity)getActivity();
@@ -57,9 +76,9 @@ public abstract class MyFragment extends Fragment {
 		mRegisteredReceivers.add(new BroadcastReceiverInfo(broadcastReceiver, broadcastAction));
 	}
 
-	public boolean onBackPressed() {
-		return false;
-	}
+	//================================================================================
+	// Broadcast Receivers
+	//================================================================================
 
 	private class BroadcastReceiverInfo {
 		private BroadcastReceiver mBroadcastReceiver;

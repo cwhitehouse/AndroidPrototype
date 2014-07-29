@@ -25,20 +25,20 @@ public abstract class MyActivity<F extends MyFragment> extends BaseActivity {
 	// Class Variables
 	//================================================================================
 
-	private View vBase;
+	protected View vBase;
 
-	private View vStatusBarOverlay;
-	private View vNavigationBarOverlay;
+	protected View vStatusBarOverlay;
+	protected View vNavigationBarOverlay;
 
-	private View vNetworkingOverlay;
+	protected View vNetworkingOverlay;
 
-	private View vLoadingSpinner;
+	protected View vLoadingSpinner;
 
-	private View vError;
-	private TextView vErrorTitle;
-	private TextView vErrorMessage;
+	protected View vError;
+	protected TextView vErrorTitle;
+	protected TextView vErrorMessage;
 
-	private F vFragment;
+	protected F vFragment;
 
 	//================================================================================
 	// Life Cycle Management

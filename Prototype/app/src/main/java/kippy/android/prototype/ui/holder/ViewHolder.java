@@ -7,18 +7,30 @@ import android.view.View;
  */
 public abstract class ViewHolder {
 
-	int mLastPosition;
+	//================================================================================
+	// Variables
+	//================================================================================
+
+	protected int mPosition;
 	public View vBase;
+
+	//================================================================================
+	// Constructor
+	//================================================================================
 
 	public ViewHolder(View convertView, int position) {
 		vBase = convertView;
 		vBase.setTag(this);
 
-		mLastPosition = position;
+		mPosition = position;
 	}
 
+	//================================================================================
+	// Reset
+	//================================================================================
+
 	public void resetViewHolder(int newPosition) {
-		if(mLastPosition != newPosition)
+		if(mPosition != newPosition)
 			reset();
 	}
 

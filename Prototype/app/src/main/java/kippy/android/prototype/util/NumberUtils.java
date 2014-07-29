@@ -1,12 +1,12 @@
-package kippy.android.prototype.operation;
+package kippy.android.prototype.util;
 
 /**
- * Created by christianwhitehouse on 6/20/14.
+ * Created by christianwhitehouse on 7/29/14.
  */
-public class BroadcastKeys {
+public class NumberUtils {
 
 	//================================================================================
-	// Keys
+	// Convenience
 	//================================================================================
 
 }

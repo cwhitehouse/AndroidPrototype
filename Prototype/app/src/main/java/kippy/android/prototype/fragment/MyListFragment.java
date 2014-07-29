@@ -12,8 +12,16 @@ import kippy.android.prototype.ui.adapter.MyAdapter;
  */
 public class MyListFragment<T> extends MyFragment {
 
-	ListView vList;
-	MyAdapter<T,?> mAdapter;
+	//================================================================================
+	// Variables
+	//================================================================================
+
+	protected ListView vList;
+	protected MyAdapter<T,?> mAdapter;
+
+	//================================================================================
+	// Implementation
+	//================================================================================
 
 	@Override
 	public int getLayoutID() {

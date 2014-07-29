@@ -5,9 +5,17 @@ package kippy.android.prototype.data;
  */
 public class FileCacheData {
 
+	//================================================================================
+	// Variables
+	//================================================================================
+
 	protected String mDataString;
 	protected int mDataVersion;
 	protected long mUpdateTime;
+
+	//================================================================================
+	// Constructor
+	//================================================================================
 
 	public FileCacheData(String dataString, int dataVersion, long updateTime) {
 		mDataString = dataString;
@@ -15,9 +23,17 @@ public class FileCacheData {
 		mUpdateTime = updateTime;
 	}
 
+	//================================================================================
+	// Access
+	//================================================================================
+
 	public String getData() {
 		return mDataString;
 	}
+
+	//================================================================================
+	// Validation
+	//================================================================================
 
 	public boolean isValid(int currentVersion, long expirationLimit) {
 		return !isOldVersion(currentVersion) && !isExpired(expirationLimit);
