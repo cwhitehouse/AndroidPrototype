@@ -1,4 +1,4 @@
-package util;
+package kippy.android.prototype.util;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -11,6 +11,10 @@ import android.view.inputmethod.InputMethodManager;
  * Created by christianwhitehouse on 6/20/14.
  */
 public class AndroidUtils {
+
+	//================================================================================
+	// Keyboard Management
+	//================================================================================
 
 	public static void showKeyboard(Context c, View v) {
 		if(v != null && c != null){
@@ -26,10 +30,18 @@ public class AndroidUtils {
 		}
 	}
 
+	//================================================================================
+	// Unit Conversion
+	//================================================================================
+
 	public static int convertDipToPix(Context context, int dips) {
 		float calculatedValue = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dips, context.getResources().getDisplayMetrics());
 		return (int) FloatMath.ceil(calculatedValue);
 	}
+
+	//================================================================================
+	// App Info
+	//================================================================================
 
 	public static String getAppVersion(Context context) {
 		String appVersion = "???";
